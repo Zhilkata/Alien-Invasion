@@ -7,3 +7,7 @@ The fleet moves just like old-school match-them-up games and the original Space 
 The player has limited amount of bullets at a time, and his task is to take down as many aliens as possible before dying.
 
 There's a high-score system that remembers your best result, so you can replay and try to improve it.
+
+Trello board: https://trello.com/b/w79VO0br/alien-invasion
+
+25.05.2021: Main functionality done. Trello board has additional features I might add in the future.
