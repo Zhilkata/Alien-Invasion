@@ -16,7 +16,7 @@ class Scoreboard:
 
         # Font settings
         self.text_color = (30, 30, 30)
-        self.font = pygame.font.SysFont(None, 48)
+        self.font = pygame.font.SysFont('calibri', 48)
 
         # Prep stats
         self.prep_score()
