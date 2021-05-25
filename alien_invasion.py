@@ -92,6 +92,8 @@ class AlienInvasion:
         self.stats.reset_stats()
         self.stats.game_active = True
         self.sb.prep_score()
+        self.sb.prep_level()
+        self.sb.prep_ships()
 
         # Garbage collection
         self.aliens.empty()
@@ -140,6 +142,7 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         # Respawn fleet
         if not self.aliens:
@@ -147,11 +150,16 @@ class AlienInvasion:
             self._create_fleet()
             self.settings.increase_speed()
 
+            # Increase level
+            self.stats.level += 1
+            self.sb.prep_level()
+
     def _ship_hit(self):
         """Hit response"""
         if self.stats.ships_left > 0:
             # Lower lives
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
 
             # Clear screen
             self.aliens.empty()
